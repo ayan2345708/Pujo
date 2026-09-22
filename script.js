@@ -685,7 +685,7 @@ mahalayaBtn.addEventListener('click', async ()=>{
       await mahalayaAudio.play();
     }catch(err){
       console.error('Mahalaya audio error:', err, mahalayaAudio.error);
-      mahalayaNote.textContent = 'Audio file load hocche na — sounds/mahalaya-chandi-path.mp3 check korun';
+      mahalayaNote.textContent = 'Audio file load hocche na — sounds/chandi-path.mp3 check korun';
     }
   } else {
     mahalayaAudio.pause();
@@ -694,7 +694,7 @@ mahalayaBtn.addEventListener('click', async ()=>{
 
 mahalayaAudio.addEventListener('error', ()=>{
   console.error('Mahalaya audio failed. Code:', mahalayaAudio.error && mahalayaAudio.error.code);
-  mahalayaNote.textContent = 'Audio file khuje pawa jayni (sounds/mahalaya-chandi-path.mp3)';
+  mahalayaNote.textContent = 'Audio file khuje pawa jayni (sounds/chandi-path.mp3)';
 });
 mahalayaAudio.addEventListener('play', ()=>{
   mahalayaBtn.textContent = '❚❚';
