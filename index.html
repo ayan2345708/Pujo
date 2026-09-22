@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>চট্টলার পুজো — চট্টগ্রামের পুজো ও ঐতিহ্য</title>
+<meta name="description" content="চট্টলার পুজো — a living digital archive of Chattogram's Durga Puja traditions, temples, stories, sounds and photography.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="ambient"><span class="g1"></span><span class="g2"></span></div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar glass" id="navbar">
+  <div class="nav-brand">
+    <span class="logo bn">চট্টগ্রামের পুজো</span>
+    <span class="sub bn">সংস্কৃতি • ঐতিহ্য • উৎসব</span>
+  </div>
+  <nav class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#countdown">Countdown</a>
+    <a href="#panjika">Panjika</a>
+    <a href="#temples">Heritage</a>
+    <a href="#updates">Updates</a>
+    <a href="#gallery">Pujography</a>
+    <a href="#sounds">Sounds</a>
+    <a href="#reels">Reels</a>
+    <a href="#kahini">Kahini</a>
+    <a href="#mahalaya">Mahalaya</a>
+  </nav>
+  <div class="nav-right">
+    <button class="nav-icon-search" id="searchOpen" aria-label="Search">⌕</button>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- ============ SEARCH OVERLAY ============ -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-input-row glass-strong">
+      <span>⌕</span>
+      <input type="text" id="searchInput" placeholder="Search temples, mantras, sounds, stories…" autocomplete="off">
+      <button class="search-close" id="searchClose">✕</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<!-- ============ MOBILE DRAWER ============ -->
+<div class="drawer" id="drawer">
+  <div class="drawer-top">
+    <span class="logo display bn" style="font-family:'Hind Siliguri',sans-serif;font-size:1.2rem;">চট্টলার পুজো</span>
+    <button class="drawer-close" id="drawerClose">✕</button>
+  </div>
+  <div class="drawer-list" id="drawerList">
+    <!-- injected by JS -->
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-scene">
+    <div class="diya d1"></div><div class="diya d2"></div><div class="diya d3"></div><div class="diya d4"></div>
+  </div>
+  <div class="hero-eyebrow glass bn">শারদীয় দুর্গোৎসব ২০২৬ · চট্টগ্রাম</div>
+  <h1 class="bn">চট্টগ্রামের পুজো<br>এক নতুন অন্বেষণ</h1>
+  <p class="sub">Heartfelt endeavor to rediscover and present the history, heritage, pandals, memories, and emotions of Chattogram’s soil and people</p>
+  <div class="hero-ctas">
+    <a href="#countdown" class="btn btn-primary">Explore Puja</a>
+    <a href="#temples" class="btn btn-ghost">Discover Chattogram Heritage</a>
+  </div>
+</section>
+
+<div class="ticker-wrap">
+  <div class="ticker bn">
+    <span>শুভ মহালয়া</span><span>শারদীয় উৎসব</span><span>চট্টগ্রামের পুজো</span><span>মন্দির</span><span>ঐতিহ্য</span><span>সংস্কৃতি</span><span>স্মৃতি</span>
+    <span>শুভ মহালয়া</span><span>শারদীয় উৎসব</span><span>চট্টগ্রামের পুজো</span><span>মন্দির</span><span>ঐতিহ্য</span><span>সংস্কৃতি</span><span>স্মৃতি</span>
+  </div>
+</div>
+
+<!-- Video Section -->
+<section class="featured-video">
+    <div class="vid-caption"> Some Pujo Moments of Chattogram at a glance </div>
+    <div class="video-container">
+        <div class="video-wrapper">
+
+    <video id="heritageVideo" poster="images.png" src="promo.mp4"></video>
+
+    <button class="play-btn" id="playBtn">
+        <i class="fa-solid fa-play"></i>
+    </button>
+
+    <div class="video-controls" id="controls">
+        <button id="playPause">
+            <i class="fa-solid fa-play"></i>
+        </button>
+
+        <input type="range" id="progress">
+
+        <button id="muteBtn">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+
+        <button id="fullscreenBtn">
+            <i class="fa-solid fa-expand"></i>
+        </button>
+    </div>
+
+</div>
+
+    </div>
+</section>
+
+<!-- ============ COUNTDOWN ============ -->
+<section class="section" id="countdown">
+  <div class="section-head reveal">
+    <div class="kicker">⏳ Puja Countdown</div>
+    <h2 class="bn">পুজোর আর কতদিন?</h2>
+    <p class="bn">উৎসবের প্রতীক্ষা শুরু হয় অনেক আগেই। দিন গোনার সেই আনন্দ, প্রস্তুতির ব্যস্ততা আর উৎসবের আগমনের অপেক্ষা — প্রতিটি মুহূর্তকে আরও বিশেষ করে তুলতেই এখানে থাকছে বিভিন্ন পুজোর গুরুত্বপূর্ণ দিনগুলোর গণনা।</p>
+    <div class="source-note">Dates below are placeholders pending Panjika confirmation — connect a verified source before launch</div>
+  </div>
+  <div class="count-grid reveal" id="countGrid"></div>
+</section>
+
+<!-- ============ PUJA PANJIKA ============ -->
+<section class="section section-alt" id="panjika">
+  <div class="section-head reveal">
+    <div class="kicker">📅 Puja Panjika</div>
+    <h2 class="bn">পঞ্জিকার পাতায় পুজোর দিনক্ষণ</h2>
+    <p class="bn">তিথি, নক্ষত্র, শুভক্ষণ ও পুজোর প্রয়োজনীয় দিনক্ষণ — পঞ্জিকা আমাদের উৎসবের সময়কে সঠিকভাবে জানতে সাহায্য করে।</p>
+    <div class="source-note">Tithi and nakshatra values are placeholders — link a verified Panjika source before publishing</div>
+  </div>
+  <div class="panjika-toggle reveal">
+    <button class="lang-btn glass active" data-lang="bn">বাংলা</button>
+    <button class="lang-btn glass" data-lang="en">English</button>
+  </div>
+  <div class="panjika-grid reveal" id="panjikaGrid" ></div>
+</section>
+
+<!-- ============ TEMPLE HERITAGE ============ -->
+<section class="section section-alt" id="temples">
+  <div class="section-head reveal">
+    <div class="kicker">🛕 Chattogram Temple Heritage</div>
+    <h2 class="bn">ইতিহাসের পাতায় চট্টগ্রামের মন্দির ও পুজো</h2>
+    <p class="bn">প্রতিষ্ঠা → পরিবর্তন → ঐতিহ্যের বিস্তার → বর্তমান — প্রতিটি মন্দিরের নিজস্ব যাত্রা।</p>
+  </div>
+  <div class="temple-grid reveal">
+
+    <div class="temple-card glass">
+      <div class="temple-art">
+        <img src="https://lh3.googleusercontent.com/place-photos/AG9NLjC-buhmvHhx4UK9-18W7RgVjQVhk8lgvHaznRwJ9aUS3vGwVb3CVuTWK96yVFBv1z7f9x3YIvS5k6wNk7e8kl8SjBnABBg4P2OFVYULyYrrN7xQAP72ES0uLBoxpng4LEIAXYavP0Kr-DFKoxnYtggQdQ=s4800-w800-h600" alt="Sri Sri Chandranath Temple" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="temple-body">
+        <div class="loc">সীতাকুণ্ড, চট্টগ্রাম</div>
+        <h3>চন্দ্রনাথ মন্দির</h3>
+        <p>Sri Sri Chandranath Temple sits atop Chandranath Hill in Sitakunda and is widely regarded as one of the 51 Shakti Peethas, where the Shiva form "Chandrashekhar" is worshipped. Verified via Google Places (4.7★, 50 reviews).</p>
+        <div class="timeline-strip"><span>প্রতিষ্ঠা</span><span class="dot"></span><span>পরিবর্তন</span><span class="dot"></span><span>বিস্তার</span><span class="dot"></span><span>বর্তমান</span></div>
+        <div class="source-note">Photo: Khandokar Abdullah via Google Maps · founding-year details still need a citation</div>
+      </div>
+    </div>
+
+    <div class="temple-card glass">
+      <div class="temple-art">
+        <img src="https://lh3.googleusercontent.com/place-photos/AG9NLjCS8fFycDolW6T9Z7HlrQ1s5r5TMuucfCyUvbwp7el-V7jdzPyRnn6M1l4dnb8I6Hs1bnzr2JIG_SZLxoKhHzijjM7-4h8ZkuAut1kFGamOLj9g3KHixnkk5bDtjCjFu21fARby4qTtxgGImg=s4800-w800-h600" alt="Sree Sree Chatteshwari Kali Temple" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="temple-body">
+        <div class="loc">চাটগাঁইশ্বরী রোড, চট্টগ্রাম</div>
+        <h3>চাটেশ্বরী কালী মন্দির</h3>
+        <p>Sree Sree Chatteshwari Kali Temple is one of the oldest temples in the city and is counted among the Shakti Peeths in Bangladesh. Rebuilt after damage during the Liberation War, per public reviews. Verified via Google Places (4.4★, 968 reviews).</p>
+        <div class="timeline-strip"><span>প্রতিষ্ঠা</span><span class="dot"></span><span>পরিবর্তন</span><span class="dot"></span><span>বিস্তার</span><span class="dot"></span><span>বর্তমান</span></div>
+        <div class="source-note">Photo: Tonmoy Chakraborty via Google Maps · pre-war founding date needs a primary-source citation</div>
+      </div>
+    </div>
+
+    <div class="temple-card glass">
+      <div class="temple-art">
+        <img src="https://lh3.googleusercontent.com/place-photos/AG9NLjAhGbJDHvQRZmFEkgCFze-umsdg9k9ZsEBD-fkfGMMOYSEYYRi0kpFnowkwDCLBQgyYU9nNV9U_M7mZr9E3zz7o6ErnXTx1G7Jd00ebEjasI7erZk9HQbHNuwJcec2cvROBFVx0XSAvj6yd=s4800-w800-h600" alt="Golpahar Mohashoshan Kali Temple" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="temple-body">
+        <div class="loc">ও.আর. নিজাম রোড, চট্টগ্রাম</div>
+        <h3>গোলপাহাড় মহাশ্মশান কালী মন্দির</h3>
+        <p>Golpahar Mohashoshan Kali Temple is a well-known Kali temple complex near GEC Circle, with shrines to Maa Kali, Shiva and Radha-Krishna, active for major festivals including Shyama Puja. Verified via Google Places (4.6★, 316 reviews).</p>
+        <div class="timeline-strip"><span>প্রতিষ্ঠা</span><span class="dot"></span><span>পরিবর্তন</span><span class="dot"></span><span>বিস্তার</span><span class="dot"></span><span>বর্তমান</span></div>
+        <div class="source-note">Photo: Aditta Roy via Google Maps · founding history needs a primary-source citation</div>
+      </div>
+    </div>
+
+    <div class="temple-card glass">
+      <!-- No public photo available yet for this listing — replace this SVG with <img src="YOUR_IMAGE_URL"> once you have one -->
+      <div class="temple-art">
+        <svg class="silhouette" viewBox="0 0 400 200" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2a160f"/><stop offset="100%" stop-color="#0e0805"/></linearGradient></defs>
+          <rect width="400" height="200" fill="url(#sky2)"/>
+          <circle cx="90" cy="45" r="20" fill="#c85a3a" opacity="0.4"/>
+          <rect x="150" y="90" width="100" height="80" fill="#0a0503" opacity="0.9"/>
+          <polygon points="200,50 230,90 170,90" fill="#0a0503" opacity="0.9"/>
+          <rect x="185" y="120" width="30" height="50" fill="#1f130d"/>
+        </svg>
+      </div>
+      <div class="temple-body">
+        <div class="loc">শান্তিরহাট, চট্টগ্রাম</div>
+        <h3>আদি জগন্নাথ মন্দির</h3>
+        <p>Old Jagannath Temple ("আদি জগন্নাথ মন্দির") is a historic Jagannath temple at Jagannath Bari, Shantirhat, Chattogram. Verified name and location via Google Places — no public photo available yet, and detailed history still needs a citation.</p>
+        <div class="timeline-strip"><span>প্রতিষ্ঠা</span><span class="dot"></span><span>পরিবর্তন</span><span class="dot"></span><span>বিস্তার</span><span class="dot"></span><span>বর্তমান</span></div>
+        <div class="source-note">No photo available yet · history pending citation from verified archive</div>
+      </div>
+    </div>
+
+    <div class="temple-card glass">
+      <div class="temple-art">
+        <img src="https://lh3.googleusercontent.com/place-photos/AG9NLjA4sFDAEk8bZ1JE_CVqSnTuN4DCXVK_BaQFlHq5nvIbAfucdcFCTqQIF2Gb7tWX669bjphxELsDN5eLl4Rs1iJZjiF69M__hJAIWINCNpxQ1txkpP2-wLJSqtEWuhhXfT0gl22O2DaHipgVWw=s4800-w720-h556" alt="ISKCON Prabartak Sri Krishna Mandir" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="temple-body">
+        <div class="loc">প্রবর্তক সার্কেল, চট্টগ্রাম</div>
+        <h3>ইসকন প্রবর্তক শ্রীকৃষ্ণ মন্দির</h3>
+        <p>ISKCON Prabartak Sri Krishna Mandir sits atop Prabartak Hill, built with white marble, and is known for its evening Aarti and Govinda's vegetarian restaurant. One of Bangladesh's most-reviewed temples. Verified via Google Places (4.7★, 1,386 reviews).</p>
+        <div class="timeline-strip"><span>প্রতিষ্ঠা</span><span class="dot"></span><span>পরিবর্তন</span><span class="dot"></span><span>বিস্তার</span><span class="dot"></span><span>বর্তমান</span></div>
+        <div class="source-note">Photo: Tipu Das via Google Maps · founding-year details still need a citation</div>
+      </div>
+    </div>
+
+    <div class="temple-card glass">
+      <div class="temple-art">
+        <img src="https://lh3.googleusercontent.com/grass-cs/ACvplmNvptGvR7zJ8JHtaeOq0ookndkCr-2tItxaDkj5cDLlAyMpCYRCdhybRCaZfRvdnSuCtThdLMXc1OaUuSQcPx3ZTO1McyKpI01Y6cTZdtDmUPjoEE6-qdIeoDFv50LG5dVYGg7qfauTmkE=s4800-w800-h600" alt="Sri Sri Kaibalyadham" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="temple-body">
+        <div class="loc">কৈবল্যধাম রোড, চট্টগ্রাম</div>
+        <h3>শ্রী শ্রী কৈবল্যধাম</h3>
+        <p>Sri Sri Kaibalyadham, also known locally as the Ram Thakur Ashram, is a large hilltop temple complex offering daily prayers, prasad, and devotee accommodation. Verified via Google Places (4.5★, 802 reviews).</p>
+        <div class="timeline-strip"><span>প্রতিষ্ঠা</span><span class="dot"></span><span>পরিবর্তন</span><span class="dot"></span><span>বিস্তার</span><span class="dot"></span><span>বর্তমান</span></div>
+        <div class="source-note">Photo: Kajol Nath via Google Maps · founding-year details still need a citation</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ PUJA UPDATES ============ -->
+<section class="section" id="updates">
+  <div class="section-head reveal">
+    <div class="kicker">🪔 Puja Updates</div>
+    <h2 class="bn">চট্টগ্রামের পুজোর সর্বশেষ খবর</h2>
+    <div class="source-note">Sample entries — connect a CMS feed so committees and admins can publish real updates</div>
+  </div>
+  <div class="update-filters reveal">
+    <span class="sound-chip glass active">Latest</span>
+    <span class="sound-chip glass">Trending</span>
+    <span class="sound-chip glass">Nearby</span>
+  </div>
+  <div class="update-grid reveal" id="updateGrid"></div>
+</section>
+
+<!-- ============ PUJOGRAPHY GALLERY ============ -->
+<section class="section" id="gallery">
+  <div class="section-head reveal">
+    <div class="kicker">📸 Pujography Contest</div>
+    <h2 class="bn">আপনার চোখে পুজোর গল্প</h2>
+    <p class="bn">একটি ছবি কখনো শুধু একটি ছবি নয় — তার মধ্যে লুকিয়ে থাকে একটি মুহূর্ত, একটি অনুভূতি কিংবা একটি গল্প।</p>
+  </div>
+  <div class="masonry reveal" id="masonryGrid"></div>
+  <div style="text-align:center; margin-top:44px;">
+    <button class="btn btn-primary" id="openPhotoModal">Submit Your Photograph</button>
+  </div>
+</section>
+
+<!-- ============ PUJA SOUNDS ============ -->
+<section class="section section-alt" id="sounds">
+  <div class="section-head reveal">
+    <div class="kicker">🎵 Puja Sounds</div>
+    <h2 class="bn">পুজোর শব্দেই জেগে উঠুক স্মৃতি</h2>
+  </div>
+  <div class="sound-cats reveal">
+    <span class="sound-chip glass active">Dhak</span>
+    <span class="sound-chip glass">Shankh</span>
+    <span class="sound-chip glass">Kansa Ghanta</span>
+    <span class="sound-chip glass">Aarti</span>
+    <span class="sound-chip glass">Chandi Path</span>
+    <span class="sound-chip glass">Traditional Songs</span>
+  </div>
+  <div class="sound-list reveal glass" style="padding:10px;" id="soundList"></div>
+</section>
+
+<!-- ============ PUJA REELS ============ -->
+<section class="section section-alt" id="reels">
+  <div class="section-head reveal">
+    <div class="kicker">🎬 Puja Reels</div>
+    <h2 class="bn">ফ্রেমে ফ্রেমে পুজোর অনুভূতি</h2>
+    <div class="source-note">Embed real YouTube/Instagram/Facebook clips here — never self-host others' video</div>
+  </div>
+  <div class="reel-strip reveal" id="reelStrip">
+    <iframe src="https://www.facebook.com/share/r/18SiAyux5M/" width="320" height="570" style="border:none; overflow:hidden" scrolling="no" frameborder="0" allowfullscreen>
+</iframe>
+  </div>
+</section>
+
+<!-- ============ PUJA NEAR ME ============ -->
+<section class="section" id="nearme">
+  <div class="section-head reveal">
+    <div class="kicker">📍 Puja Near Me</div>
+    <h2 class="bn">আপনার আশেপাশের পুজো</h2>
+    <p>Find mandaps, temples and cultural programs closest to you.</p>
+  </div>
+  <div class="nearme-box glass reveal">
+    <button class="btn btn-primary" id="nearMeBtn">Use My Location</button>
+    <div class="nearme-status" id="nearMeStatus"></div>
+    <div class="nearme-list" id="nearMeList"></div>
+  </div>
+</section>
+
+<div class="mini-player glass-strong" id="miniPlayer">
+  <div class="mp-top">
+    <div class="mp-art" id="mpArt"><i class="fa-solid fa-music"></i></div>
+    <div class="mp-info">
+      <strong id="miniTrackName">Dhaker Bol — Traditional</strong>
+      <span id="miniTrackArtist">Source: Community Archive</span>
+    </div>
+    <div class="mp-transport">
+      <button class="mp-btn" id="miniPrevBtn" aria-label="Previous track"><i class="fa-solid fa-backward-step"></i></button>
+      <button class="mp-btn mp-play" id="miniPlayBtn" aria-label="Play or pause"><i class="fa-solid fa-play"></i></button>
+      <button class="mp-btn" id="miniNextBtn" aria-label="Next track"><i class="fa-solid fa-forward-step"></i></button>
+    </div>
+    <button class="mp-btn mp-list-btn" id="miniListToggle" aria-label="Open playlist"><i class="fa-solid fa-list-ul"></i></button>
+    <button class="close-p" id="miniClose" aria-label="Close player">✕</button>
+  </div>
+  <div class="mp-progress-row">
+    <span class="mp-time" id="mpCurrentTime">0:00</span>
+    <div class="bar" id="miniBar"><i></i></div>
+    <span class="mp-time" id="mpDuration">0:00</span>
+  </div>
+  <div class="mp-tools">
+    <button class="mp-tool" id="miniShuffle"><i class="fa-solid fa-shuffle"></i><span>Shuffle</span></button>
+    <button class="mp-tool" id="miniRepeat"><i class="fa-solid fa-repeat"></i><span>Repeat</span></button>
+    <button class="mp-tool" id="miniCatTag"><i class="fa-solid fa-drum"></i><span id="mpCatLabel">Dhak</span></button>
+  </div>
+</div>
+
+<!-- ============ PLAYLIST OVERLAY ============ -->
+<div class="playlist-overlay" id="playlistOverlay">
+  <div class="playlist-panel glass-strong">
+    <div class="playlist-head">
+      <span class="bn">প্লেলিস্ট · Puja Sounds</span>
+      <button class="modal-close-x" id="playlistClose" aria-label="Close playlist">✕</button>
+    </div>
+    <div class="playlist-rows" id="playlistRows"></div>
+  </div>
+</div>
+
+<!-- ============ KAHINI · MANTRA · SLOK ============ -->
+<section class="section" id="kahini">
+  <div class="section-head reveal">
+    <div class="kicker">🕉️ Kahini • Mantra • Slok</div>
+    <h2 class="bn">পুজোর কাহিনি, মন্ত্র ও শ্লোকের জগৎ</h2>
+  </div>
+  <div class="tabs-row reveal">
+    <button class="tab-btn glass active" data-tab="kahiniTab">Kahini</button>
+    <button class="tab-btn glass" data-tab="mantraTab">Mantra</button>
+    <button class="tab-btn glass" data-tab="slokTab">Slok</button>
+  </div>
+
+  <div class="tab-panel active" id="kahiniTab">
+    <div class="kahini-card glass">
+      <h4 class="bn">দেবী মাহাত্ম্য</h4>
+      <p>The Devi Mahatmya, part of the Markandeya Purana, is the foundational scripture behind Durga Puja — the story of the Goddess's battle against Mahishasura. Full retelling to be sourced from a verified translation.</p>
+      <div class="kahini-actions"><span>🔊 Listen</span><span>⧉ Copy</span><span>🔖 Save</span></div>
+    </div>
+    <div class="kahini-card glass">
+      <h4 class="bn">শিব কাহিনি</h4>
+      <p>Regional Shiva stories connected to Chattogram's temple traditions, often recounted during related festival observances. Placeholder — to be replaced with verified regional narratives.</p>
+      <div class="kahini-actions"><span>🔊 Listen</span><span>⧉ Copy</span><span>🔖 Save</span></div>
+    </div>
+    <div class="kahini-card glass">
+      <h4 class="bn">কালী কাহিনি</h4>
+      <p>Stories of Kali's fierce compassion, told across Bengal's Shakta tradition and closely tied to the region's Kali Puja observances.</p>
+      <div class="kahini-actions"><span>🔊 Listen</span><span>⧉ Copy</span><span>🔖 Save</span></div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="mantraTab">
+    <div class="kahini-card glass">
+      <h4>Sankalpa</h4>
+      <p class="bn">পূজা শুরুর সংকল্প মন্ত্র — পূজারীর নিয়ত ও উদ্দেশ্য ঘোষণার আনুষ্ঠানিক অংশ।</p>
+      <div class="kahini-actions"><span>🔊 Listen</span><span>⧉ Copy</span><span>🔖 Save</span></div>
+    </div>
+    <div class="kahini-card glass">
+      <h4>Pushpanjali</h4>
+      <p class="bn">ফুল অর্পণের সময় পাঠ করা মন্ত্র, ভক্তের শ্রদ্ধা নিবেদনের প্রতীক।</p>
+      <div class="kahini-actions"><span>🔊 Listen</span><span>⧉ Copy</span><span>🔖 Save</span></div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="slokTab">
+    <div class="shlok-block glass" style="grid-column:1/-1;">
+      <div class="sanskrit">या देवी सर्वभूतेषु शक्ति-रूपेण संस्थिता।<br>नमस्तस्यै नमस्तस्यै नमस्तस्यै नमो नमः॥</div>
+      <div class="bn-line">যা দেবী সর্বভূতেষু শক্তিরূপেণ সংস্থিতা। নমস্তস্যৈ নমস্তস্যৈ নমস্তস্যৈ নমো নমঃ॥</div>
+      <div class="en-line">"To the Goddess who dwells in all beings in the form of power — salutations, again and again." — from the Devi Mahatmya</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PUJA JOURNEY ============ -->
+<section class="section section-alt" id="journey">
+  <div class="section-head reveal">
+    <div class="kicker">🌺 Puja Journey</div>
+    <h2 class="bn">পুজোর শুরু থেকে সমাপ্তি — এক সম্পূর্ণ যাত্রা</h2>
+  </div>
+  <div class="journey-track reveal" id="journeyTrack"></div>
+</section>
+
+<!-- ============ ECHOES OF CHANDI: MAHALAYA ============ -->
+<section class="mahalaya" id="mahalaya">
+  <svg class="smoke" viewBox="0 0 800 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs><radialGradient id="smk" cx="50%" cy="100%" r="80%"><stop offset="0%" stop-color="#c9a24c" stop-opacity="0.25"/><stop offset="100%" stop-color="#0a0705" stop-opacity="0"/></radialGradient></defs>
+    <rect width="800" height="400" fill="url(#smk)"/>
+  </svg>
+  <div class="mahalaya-content">
+    <div class="kicker bn">📻 Echoes of Chandi: MAHALAYA</div>
+    <h2 class="bn">এক ভোর, এক কণ্ঠ, এক চিরন্তন অনুভূতি</h2>
+    <p class="bn">মহালয়ার ভোর মানেই এক অন্যরকম আবহ। চণ্ডীপাঠের মন্ত্র, সেই চিরচেনা কণ্ঠ, ভোরের নিস্তব্ধতা আর বাঙালির দীর্ঘদিনের স্মৃতি — 'Echoes of Chandi' সেই ঐতিহ্য, নস্টালজিয়া ও আধ্যাত্মিক অনুভূতির এক বিশেষ সংরক্ষণ।</p>
+    <div class="radio-player glass-strong">
+      <div class="wave" id="wave"></div>
+      <button class="play-lg">▶</button>
+      <div style="font-size:0.8rem; color:var(--cream-dim);">Mahalaya Broadcast</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo bn">চট্টলার পুজো</div>
+      <p class="bn">চট্টগ্রামের পুজো, ঐতিহ্য ও স্মৃতির ডিজিটাল সংরক্ষণ।</p>
+      <div class="social-row">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">◎</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="#temples">Temple Heritage</a>
+      <a href="#gallery">Pujography</a>
+      <a href="#sounds">Puja Sounds</a>
+      <a href="#kahini">Kahini · Mantra · Slok</a>
+    </div>
+    <div>
+      <h4>Contribute</h4>
+      <a href="#" data-open="photo">Submit Photo</a>
+      <a href="#" data-open="story">Submit Story</a>
+      <a href="#" data-open="puja">Submit Puja</a>
+      <a href="#">Media Guidelines</a>
+    </div>
+    <div>
+      <h4>About</h4>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Copyright</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Made with ❤️ for Chattogram's cultural heritage</span>
+    <span>© 2026 চট্টলার পুজো · <a href="#" id="adminLink" style="color:var(--cream-dim);">Admin</a></span>
+  </div>
+</footer>
+
+<!-- ============ SUBMISSION MODALS ============ -->
+<div class="modal-overlay" id="photoModalOverlay">
+  <div class="modal-box glass-strong" style="position:relative;">
+    <span class="modal-close-x" data-close="photoModalOverlay">✕</span>
+    <h3>Submit Your Photograph</h3>
+    <div class="modal-sub bn">আপনার তোলা পুজোর মুহূর্ত আমাদের সাথে ভাগ করে নিন।</div>
+    <form id="photoForm">
+      <div class="field"><label>Name</label><input type="text" required name="name"></div>
+      <div class="field"><label>Email</label><input type="email" required name="email"></div>
+      <div class="field"><label>Photograph</label><input type="file" accept="image/*" required name="attachment"></div>
+      <div class="field"><label>Caption / Story</label><textarea required name="caption"></textarea></div>
+      <div class="field-row">
+        <div class="field"><label>Location</label><input type="text" required name="location"></div>
+        <div class="field"><label>Instagram/Facebook (optional)</label><input type="text" name="social"></div>
+      </div>
+      <input type="text" class="hp-field" name="website" tabindex="-1" autocomplete="off">
+      <div class="captcha-row"><span id="photoCaptchaQ"></span><input type="text" name="captcha" required></div>
+      <div class="check-row"><input type="checkbox" required name="consent"><span>I confirm this photograph is my own work and I consent to it being featured on চট্টলার পুজো with attribution.</span></div>
+      <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Submit Photograph</button>
+      <div class="form-msg" id="photoFormMsg"></div>
+    </form>
+  </div>
+</div>
+
+<div class="modal-overlay" id="storyModalOverlay">
+  <div class="modal-box glass-strong" style="position:relative;">
+    <span class="modal-close-x" data-close="storyModalOverlay">✕</span>
+    <h3>Submit a Story</h3>
+    <div class="modal-sub bn">আপনার পরিবার বা এলাকার পুজোর গল্প, স্মৃতি বা ইতিহাস আমাদের জানান।</div>
+    <form id="storyForm">
+      <div class="field"><label>Name</label><input type="text" required name="name"></div>
+      <div class="field"><label>Email</label><input type="email" required name="email"></div>
+      <div class="field"><label>Story Title</label><input type="text" required name="title"></div>
+      <div class="field"><label>Your Story</label><textarea required name="story" style="min-height:120px;"></textarea></div>
+      <div class="field"><label>Source / attribution (family account, book, elder's recollection, etc.)</label><input type="text" required name="source"></div>
+      <input type="text" class="hp-field" name="website" tabindex="-1" autocomplete="off">
+      <div class="captcha-row"><span id="storyCaptchaQ"></span><input type="text" name="captcha" required></div>
+      <div class="check-row"><input type="checkbox" required name="consent"><span>I confirm this is accurate to my knowledge and can be edited for clarity before publishing.</span></div>
+      <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Submit Story</button>
+      <div class="form-msg" id="storyFormMsg"></div>
+    </form>
+  </div>
+</div>
+
+<div class="modal-overlay" id="pujaModalOverlay">
+  <div class="modal-box glass-strong" style="position:relative;">
+    <span class="modal-close-x" data-close="pujaModalOverlay">✕</span>
+    <h3>Submit a Puja / Event</h3>
+    <div class="modal-sub bn">আপনার কমিটির পুজো বা অনুষ্ঠানের তথ্য যুক্ত করুন।</div>
+    <form id="pujaForm">
+      <div class="field"><label>Committee / Organiser Name</label><input type="text" required name="org"></div>
+      <div class="field"><label>Contact Email</label><input type="email" required name="email"></div>
+      <div class="field-row">
+        <div class="field"><label>Location</label><input type="text" required name="location"></div>
+        <div class="field"><label>Category</label><input type="text" required name="category" placeholder="e.g. Pandal Construction"></div>
+      </div>
+      <div class="field"><label>Details</label><textarea required name="details"></textarea></div>
+      <input type="text" class="hp-field" name="website" tabindex="-1" autocomplete="off">
+      <div class="captcha-row"><span id="pujaCaptchaQ"></span><input type="text" name="captcha" required></div>
+      <div class="check-row"><input type="checkbox" required name="consent"><span>I represent this puja/committee and consent to this listing appearing on চট্টলার পুজো.</span></div>
+      <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Submit Puja</button>
+      <div class="form-msg" id="pujaFormMsg"></div>
+    </form>
+  </div>
+</div>
+
+<!-- ============ ADMIN PANEL ============ -->
+<div class="admin-overlay" id="adminOverlay">
+  <div class="admin-bar">
+    <h2>চট্টলার পুজো — Admin</h2>
+    <button class="drawer-close" id="adminClose">✕</button>
+  </div>
+  <div class="admin-body">
+    <div class="admin-stats" id="adminStats"></div>
+    <div class="admin-tabs">
+      <button class="admin-tab-btn glass active" data-atab="photo">Photos</button>
+      <button class="admin-tab-btn glass" data-atab="story">Stories</button>
+      <button class="admin-tab-btn glass" data-atab="puja">Pujas</button>
+    </div>
+    <div class="admin-queue" id="adminQueue"></div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
