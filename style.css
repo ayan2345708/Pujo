@@ -21,7 +21,7 @@
 }
 @font-face {
   font-family:"Balaka" ;
-  src: url(HasanHera/Unicode/LiHasanHeraUnicode-Regular.ttf);
+  src: url(LiHasanHeraUnicode-Regular.ttf);
 }
 
 *{box-sizing:border-box; margin:0; padding:0;}
