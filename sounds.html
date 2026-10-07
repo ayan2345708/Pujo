@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puja Sounds — চট্টলার পুজো</title>
+<meta name="description" content="ঢাক, শঙ্খ, আরতি, চণ্ডীপাঠ ও পুজোর গান — সব শব্দ এক জায়গায়।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/png" href="image.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+.subpage-nav .sub-links{display:flex; gap:10px; flex-wrap:wrap; justify-content:center;}
+.subpage-nav .sub-links a{font-size:0.8rem; color:var(--cream-dim); padding:6px 12px; border-radius:999px; border:1px solid transparent; transition:all .3s;}
+.subpage-nav .sub-links a:hover{color:var(--gold-soft);}
+.subpage-nav .sub-links a.current{color:var(--gold-soft); border-color:var(--glass-border);}
+.subpage-nav .logo{font-family:'Fraunces',serif; font-size:1.15rem; color:var(--cream);}
+@media (max-width:760px){ .subpage-nav{flex-wrap:wrap; gap:10px; justify-content:center;} .subpage-nav .logo{display:none;} }
+.subpage-hero h1{font-size:clamp(1.9rem,5vw,3rem); color:var(--cream); margin:10px 0 14px;}
+.subpage-hero .kicker{font-size:0.82rem; color:var(--gold);}
+.subpage-hero p{color:var(--cream-dim); line-height:1.8; font-size:0.98rem;}
+.sub-body{padding:40px 22px 90px; max-width:1180px; margin:0 auto; position:relative; z-index:2;}
+.sub-search{display:block; width:min(420px,100%); margin:30px auto 34px; padding:12px 18px; border-radius:999px; border:1px solid var(--glass-border); background:var(--glass-bg); color:var(--cream); font:inherit; outline:none;}
+.sub-search:focus{border-color:var(--gold-soft);}
+.sub-empty{text-align:center; color:var(--cream-dim); padding:40px 0;}
+.sounds-wrap{padding-bottom:160px;}
+</style>
+</head>
+<body>
+<div class="ambient"><span class="g1"></span><span class="g2"></span></div>
+<header class="subpage-nav glass">
+  <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> হোম</a>
+  <span class="logo bn">চট্টলার পুজো</span>
+  <nav class="sub-links bn">
+    <a href="temples.html">মন্দির</a>
+    <a href="history.html">ইতিহাস</a>
+    <a href="sounds.html" class="current">শব্দ</a>
+    <a href="reels.html">Reels</a>
+    <a href="photos.html">ছবি</a>
+    <a href="updates.html">খবর</a>
+  </nav>
+</header>
+<section class="subpage-hero">
+  <div class="kicker">🎵 Puja Sounds</div>
+  <h1 class="bn">পুজোর শব্দেই জেগে উঠুক স্মৃতি</h1>
+  <p class="bn">ঢাকের বোল, কাঁসর-ঘণ্টা, শঙ্খধ্বনি, আরতির সুর — যেকোনো ট্র্যাকে চাপ দিন, নিচের প্লেয়ারে বাজবে। পাতা বদলালেও গান চলবে না, তাই শোনার সময় এই পাতাতেই থাকুন।</p>
+</section>
+<main class="sub-body sounds-wrap">
+  <div class="sound-cats">
+    <span class="sound-chip glass active">All</span>
+    <span class="sound-chip glass">Dhak</span>
+    <span class="sound-chip glass">Shankh</span>
+    <span class="sound-chip glass">Kansa Ghanta</span>
+    <span class="sound-chip glass">Aarti</span>
+    <span class="sound-chip glass">Chandi Path</span>
+    <span class="sound-chip glass">Traditional Songs</span>
+  </div>
+  <div class="sound-list glass" style="padding:10px; margin-top:26px;" id="soundList"></div>
+</main>
+<footer>
+  <div class="footer-bottom">
+    <span>Made with ❤️ for Chattogram's cultural heritage</span>
+    <span>© 2026 চট্টলার পুজো · <a href="index.html" style="color:var(--cream-dim);">Home</a></span>
+  </div>
+</footer>
+<div class="mini-player" id="miniPlayer">
+  <div class="mp-chips">
+    <button type="button" class="mp-chip" id="miniListToggle" aria-label="Open playlists"><i class="fa-solid fa-list-ul"></i><span>Puja Radio</span><i class="fa-solid fa-chevron-down mp-caret"></i></button>
+    <div class="mp-chip static" id="miniCatTag"><i class="fa-solid fa-music"></i><span id="mpCatLabel">Dhak</span></div>
+  </div>
+  <div class="mp-card">
+    <div class="mp-art" id="mpArt"><i class="fa-solid fa-music"></i></div>
+    <div class="mp-main">
+      <div class="mp-info">
+        <strong id="miniTrackName">Dhaker Bol — Traditional</strong>
+        <span id="miniTrackArtist">Source: Community Archive</span>
+      </div>
+      <div class="bar" id="miniBar"><i></i></div>
+      <div class="mp-time-row"><span id="mpCurrentTime">0:00</span><span>/</span><span id="mpDuration">0:00</span></div>
+    </div>
+    <div class="mp-transport">
+      <button type="button" class="mp-btn" id="miniShuffle" aria-label="Shuffle"><i class="fa-solid fa-shuffle"></i></button>
+      <button type="button" class="mp-btn" id="miniPrevBtn" aria-label="Previous track"><i class="fa-solid fa-backward-step"></i></button>
+      <button type="button" class="mp-btn mp-play" id="miniPlayBtn" aria-label="Play or pause"><i class="fa-solid fa-play"></i></button>
+      <button type="button" class="mp-btn" id="miniNextBtn" aria-label="Next track"><i class="fa-solid fa-forward-step"></i></button>
+      <button type="button" class="mp-btn" id="miniRepeat" aria-label="Repeat"><i class="fa-solid fa-repeat"></i></button>
+    </div>
+    <button type="button" class="close-p" id="miniClose" aria-label="Close player">✕</button>
+  </div>
+</div>
+<div class="playlist-overlay" id="playlistOverlay">
+  <div class="playlist-panel">
+    <div class="playlist-head">
+      <span>Playlists</span>
+      <button type="button" class="modal-close-x" id="playlistClose" aria-label="Close playlists">✕</button>
+    </div>
+    <div class="playlist-tabs" id="playlistTabs"></div>
+    <div class="playlist-desc" id="playlistDesc"></div>
+    <div class="playlist-rows" id="playlistRows"></div>
+  </div>
+</div>
+<script src="data.js"></script>
+<script>initSoundPlayer();</script>
+<script src="chatbot.js"></script>
+<script src="celebrate.js"></script>
+</body>
+</html>
