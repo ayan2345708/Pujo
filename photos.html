@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pujography — চট্টলার পুজো</title>
+<meta name="description" content="Pujography — চট্টগ্রামের পুজোর সব ছবি।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/png" href="image.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Tiro+Bangla&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+.subpage-nav .sub-links{display:flex; gap:10px; flex-wrap:wrap; justify-content:center;}
+.subpage-nav .sub-links a{font-size:0.8rem; color:var(--cream-dim); padding:6px 12px; border-radius:999px; border:1px solid transparent; transition:all .3s;}
+.subpage-nav .sub-links a:hover{color:var(--gold-soft);}
+.subpage-nav .sub-links a.current{color:var(--gold-soft); border-color:var(--glass-border);}
+.subpage-nav .logo{font-family:'Fraunces',serif; font-size:1.15rem; color:var(--cream);}
+@media (max-width:760px){ .subpage-nav{flex-wrap:wrap; gap:10px; justify-content:center;} .subpage-nav .logo{display:none;} }
+.subpage-hero h1{font-size:clamp(1.9rem,5vw,3rem); color:var(--cream); margin:10px 0 14px;}
+.subpage-hero .kicker{font-size:0.82rem; color:var(--gold);}
+.subpage-hero p{color:var(--cream-dim); line-height:1.8; font-size:0.98rem;}
+.sub-body{padding:40px 22px 90px; max-width:1180px; margin:0 auto; position:relative; z-index:2;}
+.sub-search{display:block; width:min(420px,100%); margin:30px auto 34px; padding:12px 18px; border-radius:999px; border:1px solid var(--glass-border); background:var(--glass-bg); color:var(--cream); font:inherit; outline:none;}
+.sub-search:focus{border-color:var(--gold-soft);}
+.sub-empty{text-align:center; color:var(--cream-dim); padding:40px 0;}
+
+</style>
+</head>
+<body>
+<div class="ambient"><span class="g1"></span><span class="g2"></span></div>
+<header class="subpage-nav glass">
+  <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> হোম</a>
+  <span class="logo bn">চট্টলার পুজো</span>
+  <nav class="sub-links bn">
+    <a href="temples.html">মন্দির</a>
+    <a href="history.html">ইতিহাস</a>
+    <a href="sounds.html">শব্দ</a>
+    <a href="reels.html">Reels</a>
+    <a href="photos.html" class="current">ছবি</a>
+    <a href="updates.html">খবর</a>
+  </nav>
+</header>
+<section class="subpage-hero">
+  <div class="kicker">📸 Pujography Contest</div>
+  <h1 class="bn">আপনার চোখে পুজোর গল্প</h1>
+  <p class="bn">একটি ছবি কখনো শুধু একটি ছবি নয় — তার মধ্যে লুকিয়ে থাকে একটি মুহূর্ত, একটি অনুভূতি, একটি গল্প। যেকোনো ছবিতে চাপ দিয়ে বড় করে দেখুন।</p>
+</section>
+<main class="sub-body">
+  <div class="masonry" id="photoGrid"></div>
+  <div class="sub-empty bn" id="photoEmpty" style="display:none;">এখনো কোনো ছবি যুক্ত হয়নি।</div>
+  <div style="text-align:center; margin-top:44px;">
+    <a href="index.html#gallery" class="btn btn-primary">Submit Your Photograph</a>
+  </div>
+</main>
+<footer>
+  <div class="footer-bottom">
+    <span>Made with ❤️ for Chattogram's cultural heritage</span>
+    <span>© 2026 চট্টলার পুজো · <a href="index.html" style="color:var(--cream-dim);">Home</a></span>
+  </div>
+</footer>
+<script src="data.js"></script>
+<script>
+/* Plain photo wall: no like / comment buttons. Click a photo to enlarge. */
+const grid = document.getElementById('photoGrid');
+const emptyMsg = document.getElementById('photoEmpty');
+const tileHTML = (p, i)=>{
+  const bg = p.img
+    ? `<img class="ph" loading="lazy" src="${p.img}" alt="${p.cap}" style="height:${p.h}px; object-fit:cover;">`
+    : `<div class="ph" style="height:${p.h}px; background:linear-gradient(160deg, ${tones[i%tones.length]}, #0a0705);"></div>`;
+  return `<div class="tile"${p.img ? ` data-src="${p.img}"` : ''}>${bg}
+    <div class="cap"><strong>${p.cap}</strong><span>${p.loc}${p.credit ? ' · © '+p.credit : ''}</span></div>
+  </div>`;
+};
+/* your own photos (data.js → photos[]) */
+photos.forEach((p,i)=> grid.insertAdjacentHTML('beforeend', tileHTML(p,i)));
+if(!photos.length) emptyMsg.style.display = 'block';
+/* visitor photos you approved — newest first, shown ahead of the rest */
+loadCommunityPhotos().then(list=>{
+  if(!list.length) return;
+  emptyMsg.style.display = 'none';
+  grid.insertAdjacentHTML('afterbegin', list.map(tileHTML).join(''));
+});
+grid.addEventListener('click', (e)=>{
+  const tile = e.target.closest('.tile');
+  if(tile && tile.dataset.src) openGallery(grid, tile);
+});
+</script>
+<script src="chatbot.js"></script>
+<script src="celebrate.js"></script>
+</body>
+</html>
