@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>পুজোর ইতিহাস, কাহিনি ও শ্লোক — চট্টলার পুজো</title>
+<meta name="description" content="চট্টগ্রামের পুজোর ইতিহাস, কাহিনি, মন্ত্র ও শ্লোক।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/png" href="image.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Tiro+Bangla&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+.subpage-nav .sub-links{display:flex; gap:10px; flex-wrap:wrap; justify-content:center;}
+.subpage-nav .sub-links a{font-size:0.8rem; color:var(--cream-dim); padding:6px 12px; border-radius:999px; border:1px solid transparent; transition:all .3s;}
+.subpage-nav .sub-links a:hover{color:var(--gold-soft);}
+.subpage-nav .sub-links a.current{color:var(--gold-soft); border-color:var(--glass-border);}
+.subpage-nav .logo{font-family:'Fraunces',serif; font-size:1.15rem; color:var(--cream);}
+@media (max-width:760px){ .subpage-nav{flex-wrap:wrap; gap:10px; justify-content:center;} .subpage-nav .logo{display:none;} }
+.subpage-hero h1{font-size:clamp(1.9rem,5vw,3rem); color:var(--cream); margin:10px 0 14px;}
+.subpage-hero .kicker{font-size:0.82rem; color:var(--gold);}
+.subpage-hero p{color:var(--cream-dim); line-height:1.8; font-size:0.98rem;}
+.sub-body{padding:40px 22px 90px; max-width:1180px; margin:0 auto; position:relative; z-index:2;}
+.sub-search{display:block; width:min(420px,100%); margin:30px auto 34px; padding:12px 18px; border-radius:999px; border:1px solid var(--glass-border); background:var(--glass-bg); color:var(--cream); font:inherit; outline:none;}
+.sub-search:focus{border-color:var(--gold-soft);}
+.sub-empty{text-align:center; color:var(--cream-dim); padding:40px 0;}
+
+.timeline{position:relative; max-width:820px; margin:0 auto 90px; padding-left:34px;}
+.timeline::before{content:""; position:absolute; left:9px; top:6px; bottom:6px; width:1px; background:linear-gradient(var(--gold), transparent);}
+.tl-item{position:relative; padding:20px 24px; margin-bottom:20px; border-radius:var(--radius-card);}
+.tl-item::before{content:""; position:absolute; left:-31px; top:28px; width:11px; height:11px; border-radius:50%; background:var(--gold); box-shadow:0 0 12px var(--gold);}
+.tl-era{font-size:0.72rem; color:var(--gold); letter-spacing:0.08em; margin-bottom:6px;}
+.tl-item h3{color:var(--cream); font-size:1.15rem; margin-bottom:8px; font-family:'Hind Siliguri',sans-serif;}
+.tl-item p{color:var(--cream-dim); line-height:1.85; font-size:0.92rem; font-family:'Hind Siliguri',sans-serif;}
+.tl-place{display:inline-block; margin-top:10px; font-size:0.72rem; color:var(--gold-soft);}
+.hist-head{text-align:center; margin:0 auto 40px;}
+.hist-head h2{color:var(--cream); font-size:clamp(1.5rem,3.5vw,2.1rem); margin:8px 0;}
+.hist-head .kicker{color:var(--gold); font-size:0.82rem;}
+.kahini-card{cursor:pointer;}
+
+</style>
+</head>
+<body>
+<div class="ambient"><span class="g1"></span><span class="g2"></span></div>
+<header class="subpage-nav glass">
+  <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> হোম</a>
+  <span class="logo bn">চট্টলার পুজো</span>
+  <nav class="sub-links bn">
+    <a href="temples.html">মন্দির</a>
+    <a href="history.html" class="current">ইতিহাস</a>
+    <a href="sounds.html">শব্দ</a>
+    <a href="reels.html">Reels</a>
+    <a href="photos.html">ছবি</a>
+    <a href="updates.html">খবর</a>
+  </nav>
+</header>
+<section class="subpage-hero">
+  <div class="kicker">📜 Puja History</div>
+  <h1 class="bn">ইতিহাস, কাহিনি, মন্ত্র ও শ্লোক</h1>
+  <p class="bn">পৌরাণিক উপাখ্যান থেকে চট্টগ্রামের মন্দিরের স্মৃতি — প্রজন্মের পর প্রজন্ম ধরে চলে আসা বিশ্বাস ও ঐতিহ্য এক পাতায়।</p>
+</section>
+<main class="sub-body">
+  <div class="hist-head"><div class="kicker">⏳ Timeline</div><h2 class="bn">সময়ের পথে চট্টগ্রামের পুজো</h2></div>
+  <div class="timeline" id="timeline"></div>
+
+  <div class="hist-head"><div class="kicker">🕉️ Kahini • Mantra • Slok</div><h2 class="bn">কাহিনি, মন্ত্র ও শ্লোক</h2></div>
+  <div class="tabs-row reveal">
+    <button class="tab-btn glass active" data-tab="kahiniTab">Kahini</button>
+    <button class="tab-btn glass" data-tab="mantraTab">Mantra</button>
+    <button class="tab-btn glass" data-tab="slokTab">Slok</button>
+  </div>
+
+  <div class="tab-panel active" id="kahiniTab">
+    <div class="kahini-card glass">
+      <h4 class="bn">দেবী মাহাত্ম্য</h4>
+      <p>The Devi Mahatmya, part of the Markandeya Purana, is the foundational scripture behind Durga Puja — the story of the Goddess's battle against Mahishasura. Full retelling to be sourced from a verified translation.</p>
+      <div class="kahini-actions"><span>🔊 Listen</span><span>⧉ Copy</span><span>🔖 Save</span></div>
+    </div>
+    <div class="kahini-card glass">
+      <h4 class="bn">শিব কাহিনি</h4>
+      <p>Regional Shiva stories connected to Chattogram's temple traditions, often recounted during related festival observances. Placeholder — to be replaced with verified regional narratives.</p>
+      <div class="kahini-actions"><span>🔊 Listen</span><span>⧉ Copy</span><span>🔖 Save</span></div>
+    </div>
+    <div class="kahini-card glass">
+      <h4 class="bn">কালী কাহিনি</h4>
+      <p>Stories of Kali's fierce compassion, told across Bengal's Shakta tradition and closely tied to the region's Kali Puja observances.</p>
+      <div class="kahini-actions"><span>🔊 Listen</span><span>⧉ Copy</span><span>🔖 Save</span></div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="mantraTab">
+    <div class="kahini-card glass">
+      <h4>Sankalpa</h4>
+      <p class="bn">পূজা শুরুর সংকল্প মন্ত্র — পূজারীর নিয়ত ও উদ্দেশ্য ঘোষণার আনুষ্ঠানিক অংশ।</p>
+      <div class="kahini-actions"><span>🔊 Listen</span><span>⧉ Copy</span><span>🔖 Save</span></div>
+    </div>
+    <div class="kahini-card glass">
+      <h4>Pushpanjali</h4>
+      <p class="bn">ফুল অর্পণের সময় পাঠ করা মন্ত্র, ভক্তের শ্রদ্ধা নিবেদনের প্রতীক।</p>
+      <div class="kahini-actions"><span>🔊 Listen</span><span>⧉ Copy</span><span>🔖 Save</span></div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="slokTab">
+    <div class="shlok-block" >
+      <div class="shlok-card glass">
+<div class="shlok-item"> <!---1st shlok-->
+<h4 class="shlok-title">শক্তি স্তব</h4>
+      <div class="sanskrit">या देवी सर्वभूतेषु शक्ति-रूपेण संस्थिता।<br>नमस्तस्यै नमस्तस्यै नमस्तस्यै नमो नमः॥</div>
+      <div class="bn-line">যা দেবী সর্বভূতেষু শক্তিরূপেণ সংস্থিতা। নমস্তস্যৈ নমস্তস্যৈ নমস্তস্যৈ নমো নমঃ॥</div>
+      <div class="en-line">"To the Goddess who dwells in all beings in the form of power — salutations, again and again." — from the Devi Mahamaya</div>
+    </div>
+
+  <hr>
+  <!-- 2nd shlok -->
+    <div class="shlok-item">
+     <h4 class="shlok-title">মঙ্গল শ্লোক</h4>
+       <div class="sanskrit">
+         सर्वमङ्गलमाङ्गल्ये शिवे सर्वार्थसाधिके।
+      </div>
+    <div class="bn-line">
+      সর্ব মঙ্গলের মঙ্গলময়ী, সকল কামনার সিদ্ধিদাত্রী।
+    </div>
+      <div class="en-line">
+      O Auspicious One, fulfiller of all purposes.
+      </div>
+    </div>
+   <hr>
+<!-- 3rd shlok -->
+      <div class="shlok-item">
+       <h4 class="shlok-title">রক্ষা শ্লোক</h4>
+         <div class="sanskrit">
+           दुर्गे स्मृता हरसि भीतिमशेषजन्तोः।
+        </div>
+       <div class="bn-line">
+          হে দুর্গা, তোমার স্মরণ সকল ভয় দূর করে।
+       </div>
+         <div class="en-line">
+        Remembered in danger, Durga removes all fear.
+          </div>
+       </div>
+    </div>
+  </div>
+  </div>
+</main>
+<footer>
+  <div class="footer-bottom">
+    <span>Made with ❤️ for Chattogram's cultural heritage</span>
+    <span>© 2026 চট্টলার পুজো · <a href="index.html" style="color:var(--cream-dim);">Home</a></span>
+  </div>
+</footer>
+<div class="kahini-modal" id="kahiniModal">
+    <div class="kahini-modal-content glass"> 
+        <button class="modal-close">&times;</button>
+        <h3 id="modalTitle"></h3>
+        <div id="modalText"></div>
+    </div>
+</div>
+
+<script src="data.js"></script>
+<script>
+const esc = s=> String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const tl = document.getElementById('timeline');
+historyTimeline.forEach(e=>{
+  tl.insertAdjacentHTML('beforeend', `<div class="tl-item glass">
+    <div class="tl-era bn">${esc(e.era)}</div>
+    <h3>${esc(e.title)}</h3>
+    <p>${esc(e.text)}</p>
+    ${e.place ? `<span class="tl-place bn">📍 ${esc(e.place)}</span>` : ''}
+  </div>`);
+});
+
+/* tabs */
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.onclick = ()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+  };
+});
+
+/* kahini / mantra card -> modal */
+const kModal = document.getElementById('kahiniModal');
+const closeK = ()=>{ kModal.classList.remove('active'); document.body.style.overflow=''; };
+document.querySelectorAll('.kahini-card').forEach(card=>{
+  card.addEventListener('click', (e)=>{
+    if(e.target.closest('.kahini-actions')) return;
+    document.getElementById('modalTitle').innerHTML = card.querySelector('h4').innerHTML;
+    document.getElementById('modalText').innerHTML = card.querySelector('p').innerHTML;
+    kModal.classList.add('active'); document.body.style.overflow = 'hidden';
+  });
+});
+kModal.querySelector('.modal-close').addEventListener('click', closeK);
+kModal.addEventListener('click', (e)=>{ if(e.target === kModal) closeK(); });
+document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeK(); });
+
+/* Copy / Save buttons */
+document.querySelectorAll('.kahini-actions span').forEach(el=>{
+  if(el.textContent.includes('Copy')){
+    el.style.cursor = 'pointer';
+    el.onclick = ()=>{
+      const card = el.closest('.kahini-card');
+      const txt = card.querySelector('h4').textContent + '\n' + card.querySelector('p').textContent;
+      (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(()=>{
+        const old = el.textContent; el.textContent = '✓ Copied'; setTimeout(()=> el.textContent = old, 1400);
+      }).catch(()=>{});
+    };
+  }
+  if(el.textContent.includes('Save')){
+    el.style.cursor = 'pointer';
+    const key = 'pj-hist-save:' + el.closest('.kahini-card').querySelector('h4').textContent.trim();
+    try{ if(localStorage.getItem(key)) el.classList.add('saved'); }catch(e){}
+    el.onclick = ()=>{
+      el.classList.toggle('saved');
+      try{ el.classList.contains('saved') ? localStorage.setItem(key,'1') : localStorage.removeItem(key); }catch(e){}
+    };
+  }
+});
+</script>
+<script src="chatbot.js"></script>
+<script src="celebrate.js"></script>
+</body>
+</html>

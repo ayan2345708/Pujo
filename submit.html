@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ফরম পূরণ করুন — চট্টলার পুজো</title>
+<meta name="description" content="চট্টগ্রামের পুজোর আপনার তোলা ছবি জমা দিন।">
+<link rel="icon" type="image/png" href="image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:#fff9e8; font-family:'Hind Siliguri',sans-serif; color:#2a1a10; min-height:100vh; padding:28px 14px 60px;}
+  .top{max-width:1040px; margin:0 auto 12px; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;}
+  .top a{color:#6b0000; text-decoration:none; font-size:.9rem; font-weight:600;}
+  .top a:hover{text-decoration:underline;}
+  .card{max-width:1040px; margin:0 auto; background:#fff; border:1px solid #fbe9a6; border-radius:30px; padding:34px 20px 26px; box-shadow:0 12px 40px rgba(120,80,0,.08);}
+  h1{font-family:'Tiro Bangla','Hind Siliguri',serif; font-size:clamp(1.9rem,5vw,2.6rem); color:#6b0000; text-align:center; line-height:1.3;}
+  .sub{text-align:center; color:#355a6b; font-size:.95rem; margin:6px 0 24px;}
+  .frame-wrap{max-width:800px; margin:0 auto; position:relative;}
+  iframe{width:100%; height:min(1500px, 190vh); border:0; display:block; background:#fff;}
+  .note{max-width:800px; margin:18px auto 0; font-size:.82rem; color:#7a6a58; line-height:1.8; text-align:center;}
+  .open-btn{display:inline-block; margin-top:12px; padding:11px 22px; border-radius:999px; background:#6b0000; color:#fff; text-decoration:none; font-weight:600; font-size:.9rem;}
+  .open-btn:hover{background:#8a1a0a;}
+  .setup{max-width:640px; margin:10px auto; padding:22px 24px; border:2px dashed #e0b84a; border-radius:18px; background:#fffbea; line-height:1.9; font-size:.95rem;}
+  .setup code{background:#fff1bd; padding:2px 8px; border-radius:6px; font-size:.88em;}
+</style>
+</head>
+<body>
+<div class="top">
+  <a href="index.html">← হোমে ফিরে যান</a>
+  <a href="photos.html">🖼️ সব ছবি দেখুন</a>
+</div>
+
+<main class="card">
+  <h1>ফরম পূরণ করুন</h1>
+  <p class="sub">দয়া করে নিচের ফর্মটি সঠিকভাবে পূরণ করুন</p>
+
+  <div class="frame-wrap" id="frameWrap"></div>
+  <div class="note" id="note"></div>
+</main>
+
+<script src="data.js"></script>
+<script>
+const wrap = document.getElementById('frameWrap'), note = document.getElementById('note');
+const src = googleFormEmbedURL(PHOTO_FORM_URL);
+if(src){
+  wrap.innerHTML = `<iframe src="${src}" title="ছবি জমা দেওয়ার ফর্ম" loading="eager">লোড হচ্ছে…</iframe>`;
+  note.innerHTML = `ফর্মটি না দেখা গেলে নিচের বাটনে চাপ দিয়ে নতুন ট্যাবে খুলুন।<br>
+    <a class="open-btn" href="${PHOTO_FORM_URL.replace(/"/g,'&quot;')}" target="_blank" rel="noopener">নতুন ট্যাবে ফর্ম খুলুন ↗</a>`;
+}else{
+  wrap.innerHTML = `<div class="setup">
+    ⚙️ <strong>Google Form-এর লিংক এখনো বসানো হয়নি।</strong><br>
+    <code>data.js</code> ফাইলে <code>PHOTO_FORM_URL</code>-এর ভেতরে আপনার ফর্মের লিংক পেস্ট করুন, যেমন:<br>
+    <code>https://docs.google.com/forms/d/e/…/viewform</code>
+  </div>`;
+}
+</script>
+</body>
+</html>
